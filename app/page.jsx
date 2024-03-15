@@ -115,10 +115,10 @@ export default function Home() {
         onClose={handleClose}
         PaperProps={{
           component: 'form',
-          onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
+          onSubmit: (event) => {
             event.preventDefault();
             const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries((formData as any).entries());
+            const formJson = Object.fromEntries((formData).entries());
             const email = formJson.email;
             console.log(email);
             handleClose();
