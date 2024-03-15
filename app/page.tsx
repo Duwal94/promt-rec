@@ -126,34 +126,38 @@ export default function Home() {
             handleClose();
           },
         }}
+        sx={{  width: '100%' } }
       >
         <DialogTitle className="text-2xl font-bold mb-4">
-          Enter Prompt
-        </DialogTitle>
-        <DialogContentText className="m-6">
-          Enter a prompt to generate new recommendations.
-        </DialogContentText>
-        <input
-          type="text"
-          placeholder="Enter prompt"
-          value={prompt}
-          onChange={handlePromptChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded m-4 text-black"
-        />
-        <div className="flex justify-end">
-          <button
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 m-2 rounded mr-2 transition-colors duration-300"
-            onClick={() => setOpen(false)}
-          >
-            Cancel
-          </button>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded transition-colors duration-300"
-            onClick={generateRecommendations}
-          >
-            Generate
-          </button>
-        </div>
+            Enter Prompt
+          </DialogTitle>
+          <DialogContentText className="m-6">
+              Enter a prompt to generate new recommendations.
+            </DialogContentText>
+        <DialogContent>
+            <input
+              type="text"
+              placeholder="Enter prompt"
+              value={prompt}
+              onChange={handlePromptChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded m-4 text-black" />
+          </DialogContent>
+        <DialogActions>
+              <div className="flex justify-end">
+              <button
+                className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 m-2 rounded mr-2 transition-colors duration-300"
+                onClick={() => setOpen(false)}
+              >
+                Cancel
+              </button>
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded transition-colors duration-300"
+                onClick={generateRecommendations}
+              >
+                Generate
+              </button>
+            </div>
+          </DialogActions>
       </Dialog>
     </div>
   );
