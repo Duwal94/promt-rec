@@ -140,7 +140,7 @@ export default function Home() {
               placeholder="Enter prompt"
               value={prompt}
               onChange={handlePromptChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded m-4 text-black" />
+              className="w-full px-4 py-2 border border-gray-300 rounded  text-black" />
           </DialogContent>
         <DialogActions>
               <div className="flex justify-end">
