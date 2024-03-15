@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <div className="max-w-3xl mx-auto py-8 relative">
-      <div className="flex mb-4 rounded-md shadow-md">
+      <div className="flex m-4 rounded-md shadow-md">
         <input
           type="text"
           placeholder="Enter User ID"
@@ -75,11 +75,11 @@ export default function Home() {
 
       {userHistory.length > 0 && (
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">User Feed</h2>
+          <h2 className="text-2xl font-bold m-4">User Feed</h2>
           {userHistory.map((news, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-md p-4 mb-4 transition-transform duration-300 hover:scale-105"
+              className="bg-white shadow-md rounded-md p-4 m-4 transition-transform duration-300 hover:scale-105"
             >
               <h3 className="text-xl font-bold text-black">{news.title}</h3>
               <p className="text-gray-700">{news.abstract}</p>
@@ -90,11 +90,11 @@ export default function Home() {
 
       {recommendations.length > 0 && (
         <div>
-          <h2 className="text-2xl font-bold mb-4">Recommendations</h2>
+          <h2 className="text-2xl font-bold m-4">Recommendations</h2>
           {recommendations.map((news, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-md p-4 mb-4 transition-transform duration-300 hover:scale-105"
+              className="bg-white shadow-md rounded-md p-4 m-4 transition-transform duration-300 hover:scale-105"
             >
               <h3 className="text-xl font-bold text-black">{news.title}</h3>
               <p className="text-gray-700">{news.abstract}</p>
@@ -106,8 +106,10 @@ export default function Home() {
       <button
         className="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-full shadow-md transition-colors duration-300"
         onClick={() => setOpen(true)}
-      >
-        <FaPlus className="text-2xl" />
+      > <div className='flex flex-row'>
+
+        <FaPlus className="text-2xl mr-2" /> Prompt
+      </div>
       </button>
 
       <Dialog
@@ -128,7 +130,7 @@ export default function Home() {
         <DialogTitle className="text-2xl font-bold mb-4">
           Enter Prompt
         </DialogTitle>
-        <DialogContentText className="mb-6">
+        <DialogContentText className="m-6">
           Enter a prompt to generate new recommendations.
         </DialogContentText>
         <input
@@ -136,17 +138,17 @@ export default function Home() {
           placeholder="Enter prompt"
           value={prompt}
           onChange={handlePromptChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded mb-4 text-black"
+          className="w-full px-4 py-2 border border-gray-300 rounded m-4 text-black"
         />
         <div className="flex justify-end">
           <button
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2 transition-colors duration-300"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 m-2 rounded mr-2 transition-colors duration-300"
             onClick={() => setOpen(false)}
           >
             Cancel
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded transition-colors duration-300"
             onClick={generateRecommendations}
           >
             Generate
